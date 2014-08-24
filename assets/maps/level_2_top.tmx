@@ -5,7 +5,7 @@
  </tileset>
  <layer name="layer" width="41" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AU0BswDrQDCABGJDwYASMWPJgANvfRyp347BoMGAQALRAAOQ==
+   eJxjYBgFo2AU0BswDrQDCABGJDwYASMWTC3AQwUzsLmPmu4UI9KuwYBBAABMIABb
   </data>
  </layer>
  <layer name="collision" width="41" height="10" opacity="0.6">
@@ -15,6 +15,6 @@
  </layer>
  <objectgroup name="objects" width="41" height="10">
   <object type="player" x="16" y="234" width="40" height="40"/>
-  <object type="end" x="1230" y="10" width="32" height="64"/>
+  <object type="end" x="1216" y="224" width="32" height="64"/>
  </objectgroup>
 </map>

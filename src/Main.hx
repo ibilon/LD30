@@ -14,6 +14,8 @@ class Main extends Engine
 	{
 		#if debug HXP.console.enable(Key.SPACE); #end
 		
+		HXP.defaultFont = "font/ThrowMyHandsUpintheAir.ttf";
+		
 		Input.define("p1_UP", [Key.Z, Key.W]);
 		Input.define("p1_LEFT", [Key.Q, Key.A]);
 		Input.define("p1_DOWN", [Key.S]);
@@ -24,7 +26,8 @@ class Main extends Engine
 		Input.define("p2_DOWN", [Key.DOWN]);
 		Input.define("p2_RIGHT", [Key.RIGHT]);
 		
-		HXP.scene = new scenes.Level(2);
+		//~ HXP.scene = new scenes.Level(2);
+		HXP.scene = new scenes.Menu();
 	}
 
 	public static function main ()

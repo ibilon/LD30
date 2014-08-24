@@ -6,13 +6,11 @@ import com.haxepunk.Scene;
 import com.haxepunk.graphics.Backdrop;
 import com.haxepunk.graphics.Image;
 import com.haxepunk.graphics.Text;
-import com.haxepunk.utils.Input;
 
-class Menu extends Scene
+class EndScreen extends Scene
 {
 	var top : Entity;
 	var bottom : Entity;
-	var button : Entity;
 	
 	public override function begin ()
 	{
@@ -23,11 +21,10 @@ class Menu extends Scene
 		bottom = addGraphic(bottomB, 0, 0, 0);
 		
 		var title = new Image("graphics/title.png");
-		addGraphic(title, 0, 120, (320 - title.height) / 2);
+		addGraphic(title, 0, 120, 100);
 		
-		var play = new Image("graphics/play.png");
-		button = addGraphic(play, 0, (640 - play.width) / 2, 320 - (play.height / 2));
-		button.setHitboxTo(play);
+		var end = new Text("You completed all the levels!\n\nThanks for playing my game :)", { size: 42, align: flash.text.TextFormatAlign.CENTER, color: 0 });
+		addGraphic(end, 0, (640 - end.width) / 2, 320 - (end.height / 2));
 		
 		var credits = new Text("A game made in 48h for Ludum Dare 30\nby Valentin Lemiere", { size: 30, align: flash.text.TextFormatAlign.CENTER, color: 0 });
 		addGraphic(credits, 0, (640 - credits.width) / 2, 540);
@@ -39,19 +36,5 @@ class Menu extends Scene
 		
 		top.x += 50 * HXP.elapsed;
 		bottom.x += 50 * HXP.elapsed;
-		
-		if (button.collidePoint(button.x, button.y, Input.mouseX, Input.mouseY))
-		{
-			cast(button.graphic, Image).color = 0xffe8c4;
-			
-			if (Input.mouseReleased)
-			{
-				HXP.scene = new scenes.Level(1);
-			}
-		}
-		else
-		{
-			cast(button.graphic, Image).color = 0xFFFFFF;
-		}
 	}
 }

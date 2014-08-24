@@ -1,6 +1,7 @@
 package scenes;
 
 import com.haxepunk.Entity;
+import com.haxepunk.HXP;
 import com.haxepunk.Scene;
 import com.haxepunk.tmx.*;
 
@@ -14,11 +15,15 @@ typedef Map = {
 
 class Level extends Scene
 {
+	static inline var MAX_LEVEL = 2;
 	var maps = new Array<Map>();
+	var id : Int;
 	
 	public function new (id:Int)
 	{
 		super();
+		
+		this.id = id;
 		
 		load('maps/level_${id}_top.tmx', 0, "p1_");
 		load('maps/level_${id}_bottom.tmx', 320, "p2_");
@@ -89,7 +94,14 @@ class Level extends Scene
 		
 		if (ended)
 		{
-			trace("ended");
+			if (id < MAX_LEVEL)
+			{
+				HXP.scene = new scenes.Level(id + 1);
+			}
+			else
+			{
+				HXP.scene = new scenes.EndScreen();
+			}
 		}
 	}
 }
