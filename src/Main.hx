@@ -26,8 +26,11 @@ class Main extends Engine
 		Input.define("p2_DOWN", [Key.DOWN]);
 		Input.define("p2_RIGHT", [Key.RIGHT]);
 		
-		//~ HXP.scene = new scenes.Level(2);
+		#if debug
+		HXP.scene = new scenes.Level(2);
+		#else
 		HXP.scene = new scenes.Menu();
+		#end
 	}
 
 	public static function main ()

@@ -4,6 +4,8 @@
 
 ## Compiling
 
+Change the font used in src/Main.hx line 17 or see assets/font/README.md on how to download the missing font.
+
 Requires Haxe 3 and openfl.
 
 ```bash
