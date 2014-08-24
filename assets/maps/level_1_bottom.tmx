@@ -5,16 +5,17 @@
  </tileset>
  <layer name="layer" width="21" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2BwAW4amCmKxGaiMgYBABoUAEk=
+   eJxjYBgFo4D6QB6IFYBYEUmMD4iZkDA/Dr3cUIwONIFYC4i1cZiHz1xRKGbAoYcSDAIA/NgBkQ==
   </data>
  </layer>
  <layer name="collision" width="21" height="10" opacity="0.64">
   <data encoding="base64" compression="zlib">
-   eJxjYKAuYKayeaNmjppJbTNpgQE61ABb
+   eJxjYKAuYKayeaNmDh8zmbFgSszEZh4hc/HpoQQDAFHAAH8=
   </data>
  </layer>
  <objectgroup name="objects" width="21" height="10">
   <object type="player" x="16" y="236" width="40" height="40"/>
-  <object type="end" x="576" y="224" width="32" height="64"/>
+  <object type="end" x="576" y="224" width="64" height="64"/>
+  <object name="keys.png" type="image" x="256" y="96" width="32" height="32"/>
  </objectgroup>
 </map>

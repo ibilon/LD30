@@ -1,5 +1,6 @@
 import com.haxepunk.Engine;
 import com.haxepunk.HXP;
+import com.haxepunk.Sfx;
 import com.haxepunk.utils.Input;
 import com.haxepunk.utils.Key;
 
@@ -27,8 +28,11 @@ class Main extends Engine
 		Input.define("p2_RIGHT", [Key.RIGHT]);
 		
 		#if debug
-		HXP.scene = new scenes.Level(2);
+		HXP.scene = new scenes.Level(1);
 		#else
+		var music = new Sfx("audio/bu-seas-of-the-toaster." + #if flash "mp3" #else "ogg" #end);
+		music.loop();
+		
 		HXP.scene = new scenes.Menu();
 		#end
 	}

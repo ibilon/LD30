@@ -11,6 +11,6 @@ class End extends Entity
 		super(x, y);
 		this.id = id;
 		type = "end";
-		setHitbox(32, 32, 0, -32);
+		setHitbox(64, 32, 0, -32);
 	}
 }
